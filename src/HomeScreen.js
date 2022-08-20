@@ -25,7 +25,7 @@ function HomeScreen({ navigation }) {
         >
           <View>
             <View style={{ borderBottomWidth: 1, borderBottomColor: "grey" }}>
-              <Text style={{ fontSize: 15 }}> KAYWEST ATTENDANCE APP </Text>
+              <Text style={{ fontSize: 15 }}> KAYWEST ATTENDANCE APP X</Text>
             </View>
             <Button
               onPress={() => navigation.navigate("StaffCamera")}
