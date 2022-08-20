@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { BarCodeScanner } from "expo-barcode-scanner";
+import * as Linking from "expo-linking";
 
 const StaffCamera = () => {
   const navigation = useNavigation();
@@ -26,9 +27,13 @@ const StaffCamera = () => {
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
-    navigation.navigate("SignIn", {
-      details: JSON.parse(data),
-    });
+    // alert("hit me");
+    Linking.openURL(data);
+    // alert(data);
+    // console.log(data);
+    // navigation.navigate("SignIn", {
+    //   details: JSON.parse(data),
+    // });
     // alert(`Bar code with type ${type} and data ${data} has been scanned!`);
   };
 
@@ -64,7 +69,7 @@ const StaffCamera = () => {
           }}
         >
           <View style={{ marginLeft: 10, flex: 10 }}>
-            <Text>Want to share your contact?</Text>
+            <Text>Want to log your attendance? Please scan the QR</Text>
           </View>
           <TouchableOpacity
             onPress={() => navigation.goBack()}
